@@ -18,7 +18,7 @@ public class CarMovement : MonoBehaviour
         while (true)
         {
             SpawnRandomCar();
-            float waitTime = Random.Range(3f, 20f);
+            float waitTime = Random.Range(15f, 45f);
             yield return new WaitForSeconds(waitTime);
         }
     }
