@@ -37,7 +37,7 @@ public class rotationAnimation : MonoBehaviour
                 float remaining = maxDegrees - Mathf.Abs(totalRotated);
                 if (Mathf.Abs(rotationThisFrame) > remaining)
                     rotationThisFrame = Mathf.Sign(rotationThisFrame) * remaining;
-                Vector3 worldAxis = transform.right;
+                Vector3 worldAxis = transform.parent.TransformDirection(rotationAxis);
 
                 transform.RotateAround(this.gameObject.transform.parent.position, worldAxis, rotationThisFrame);
                 totalRotated += Mathf.Abs(rotationThisFrame);

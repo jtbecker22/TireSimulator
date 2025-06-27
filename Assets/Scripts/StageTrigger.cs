@@ -14,6 +14,9 @@ public class StageTrigger : MonoBehaviour
     [SerializeField]
     private wrenchManager managerWrench;
 
+    [SerializeField]
+    private tireManager managerTire;
+
     int index;
 
     public bool finishRotation;
@@ -98,18 +101,11 @@ public class StageTrigger : MonoBehaviour
             }
             else
             {
-                print("else1");
                 this.GetComponent<XRGrabInteractable>().enabled = true;
-                print("else2");
-
                 this.transform.GetChild(0).gameObject.SetActive(false);
-                print("else3");
-
                 parentTransform.gameObject.SetActive(true);
-                print("else4");
-
+                managerTire.flatTire.GetComponent<MeshCollider>().enabled = true;
                 this.GetComponent<StageTrigger>().enabled = false;
-                print("else5");
 
             }
 
