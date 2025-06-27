@@ -92,7 +92,7 @@ public class StageTrigger : MonoBehaviour
             print(managerWrench.LugNuts.Count);
             if (managerWrench.LugNuts.Count - 1 > index) {
                 print("if)");
-                managerWrench.currentNut = managerWrench.LugNuts[index + 1]; ;
+                managerWrench.currentNut = managerWrench.LugNuts[index + 1]; 
                 this.GetComponent<XRGrabInteractable>().enabled = true;
                 this.transform.GetChild(0).gameObject.SetActive(false);
                 parentTransform.gameObject.SetActive(true);
@@ -101,6 +101,7 @@ public class StageTrigger : MonoBehaviour
             }
             else
             {
+                print("else");
                 this.GetComponent<XRGrabInteractable>().enabled = true;
                 this.transform.GetChild(0).gameObject.SetActive(false);
                 parentTransform.gameObject.SetActive(true);

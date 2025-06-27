@@ -7,6 +7,7 @@ TagManager:
   - Nut
   - Grabbable
   - Wrench
+  - Spare
   layers:
   - Default
   - TransparentFX
