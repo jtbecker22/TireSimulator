@@ -343,6 +343,8 @@ GameObject:
   - component: {fileID: 1139660981453419426}
   - component: {fileID: 5348148787730269974}
   - component: {fileID: 597926475644104348}
+  - component: {fileID: 2412907603201514089}
+  - component: {fileID: 5341343800820137728}
   m_Layer: 0
   m_Name: Pickup
   m_TagString: Untagged
@@ -420,3 +422,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2412907603201514089
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8663673574762740106}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2859704, y: 2.005353, z: 4.398433}
+  m_Center: {x: -0.000000834465, y: 1.0107918, z: -0.16744733}
+--- !u!54 &5341343800820137728
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8663673574762740106}
+  serializedVersion: 2
+  m_Mass: 1000
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
