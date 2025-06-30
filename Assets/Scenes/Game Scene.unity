@@ -3402,11 +3402,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LugNuts:
   - {fileID: 1117520626}
+  - {fileID: 1699223495}
+  - {fileID: 2122309048}
   - {fileID: 613166871}
   - {fileID: 605987889}
-  - {fileID: 1699223495}
   - {fileID: 986417067}
-  - {fileID: 2122309048}
   currentNut: {fileID: 0}
 --- !u!1 &840840393 stripped
 GameObject:
