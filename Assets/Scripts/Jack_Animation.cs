@@ -17,7 +17,7 @@ public class Jack_Animation : MonoBehaviour
         if (animator != null)
         {
             animator.Play(animationStateName, 0, scrub);
-            animator.speed = 0f; // Pause the animator so it doesn't play automatically
+            //animator.speed = 0f; // Pause the animator so it doesn't play automatically
         }
     }
 }

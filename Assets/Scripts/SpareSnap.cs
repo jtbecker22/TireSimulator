@@ -18,8 +18,9 @@ public class SpareSnap : MonoBehaviour
     {
         if (other.CompareTag("Spare"))   
         {
-            parentTransform = other.gameObject.transform.parent;
-            parentTransform.gameObject.SetActive(false);
+            //parentTransform = other.gameObject.transform.parent;
+            //parentTransform.gameObject.SetActive(false);
+            other.gameObject.SetActive(false);
             spare.gameObject.SetActive(true);
             this.transform.GetChild(0).gameObject.SetActive(true);
             this.transform.GetChild(1).gameObject.SetActive(true);

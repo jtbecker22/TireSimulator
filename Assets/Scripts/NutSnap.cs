@@ -8,25 +8,26 @@ public class NutSnap : MonoBehaviour
     Transform parentTransform;
 
     [SerializeField]
-    private List<GameObject> LugNuts = new List<GameObject>();
+    private GameObject lugNut;
+    //private List<GameObject> LugNuts = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Nut"))
         {
-            parentTransform = other.gameObject.transform.parent;
-            LugNuts[0].gameObject.SetActive(true);
-            LugNuts[1].gameObject.SetActive(true);
-            LugNuts[2].gameObject.SetActive(true);
-            LugNuts[3].gameObject.SetActive(true);
-            LugNuts[4].gameObject.SetActive(true);
-            LugNuts[5].gameObject.SetActive(true);
-            parentTransform.gameObject.SetActive(false);
+            print(other.gameObject.name);
+            //parentTransform = other.gameObject.transform.parent;
+            //parentTransform.gameObject.SetActive(false);
+            
+            lugNut.gameObject.SetActive(true);
+            other.gameObject.SetActive(false);
+            this.gameObject.SetActive(false);
+
         }
     }
     // Update is called once per frame
