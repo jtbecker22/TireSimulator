@@ -10,11 +10,13 @@ public class InstructionManager : MonoBehaviour
     private TMP_Text InstructionBox;
 
     [SerializeField]
-    private Instructions InstructionList; 
+    private Instructions InstructionList;
 
     [SerializeField]
-    private int m;
-    
+    private GameObject Arrow;
+
+
+
     [SerializeField]
     int N;
     // Start is called before the first frame update
@@ -24,7 +26,7 @@ public class InstructionManager : MonoBehaviour
 
         InstructionBox.text = "Today is Wednesday";
 
-       
+
 
     }
 
@@ -39,6 +41,25 @@ public class InstructionManager : MonoBehaviour
 
         InstructionBox.text = InstructionList.instructions[N].instructionText;
 
+        Vector3 TargetPos = InstructionList.instructions[N].ArrowObjectTransform.position;
+        Quaternion TargetRot = InstructionList.instructions[N].ArrowObjectTransform.rotation;
+
+        Arrow.transform.SetPositionAndRotation(TargetPos, TargetRot);
+
         print(InstructionList.instructions[N].instructionText);
+
     }
+
+    public void NextButton()
+    {
+        N++;
+        Debug.Log("N: " + N);
+    }
+
+    public void BackButton()
+    {
+        N--;
+        Debug.Log("N: " + N);
+    }
+
 }
