@@ -17,6 +17,14 @@ public class Movement : MonoBehaviour
     void Update()
     {
         transform.LookAt(target);
+
+        Vector3 currentEuler = transform.eulerAngles;
+        currentEuler.x = 0;
+        currentEuler.z = 0;
+
+        currentEuler.y += 180f;
+
+        transform.rotation = Quaternion.Euler(currentEuler);
     }
    
 }
