@@ -1178,7 +1178,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &244578800
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5682,6 +5682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flatTire: {fileID: 919132148624994935}
+  tireSnapZone: {fileID: 244578799}
 --- !u!4 &1400738206
 Transform:
   m_ObjectHideFlags: 0

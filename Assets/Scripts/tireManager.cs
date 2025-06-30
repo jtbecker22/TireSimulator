@@ -9,6 +9,9 @@ public class tireManager : MonoBehaviour
     [SerializeField]
     public GameObject flatTire;
 
+    [SerializeField]
+    public GameObject tireSnapZone;
+
     // Start is called before the first frame update
     void Start()
     {

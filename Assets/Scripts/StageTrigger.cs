@@ -17,6 +17,7 @@ public class StageTrigger : MonoBehaviour
     [SerializeField]
     private tireManager managerTire;
 
+
     int index;
 
     public bool finishRotation;
@@ -106,6 +107,7 @@ public class StageTrigger : MonoBehaviour
                 this.transform.GetChild(0).gameObject.SetActive(false);
                 parentTransform.gameObject.SetActive(true);
                 managerTire.flatTire.GetComponent<MeshCollider>().enabled = true;
+                managerTire.tireSnapZone.gameObject.SetActive(true);
                 this.GetComponent<StageTrigger>().enabled = false;
 
             }
