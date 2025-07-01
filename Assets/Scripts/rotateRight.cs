@@ -6,8 +6,6 @@ using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 public class rotateRight : MonoBehaviour
 {
-
-
     [SerializeField]
     private wrenchTurn rotator;
 
@@ -19,10 +17,15 @@ public class rotateRight : MonoBehaviour
     private float totalRotated = 0f;
     private float maxDegrees => maxRevolutions * 360f;
 
+    [Header("Audio")]
+    public AudioSource rotationAudio; // Assign in Inspector
+
     void Update()
     {
         // Get the device (controller)
         InputDevice device = InputDevices.GetDeviceAtXRNode(controllerNode);
+
+        bool isRotating = false;
 
         // Read the joystick's horizontal movement
         if (device.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 joystickInput))
@@ -41,8 +44,26 @@ public class rotateRight : MonoBehaviour
 
                 transform.RotateAround(this.gameObject.transform.parent.position, worldAxis, rotationThisFrame);
                 totalRotated += Mathf.Abs(rotationThisFrame);
+
+                isRotating = true;
             }
         }
+
+        // Play or pause the rotation sound
+        if (rotationAudio != null)
+        {
+            if (isRotating)
+            {
+                if (!rotationAudio.isPlaying)
+                    rotationAudio.Play();
+            }
+            else
+            {
+                if (rotationAudio.isPlaying)
+                    rotationAudio.Pause();
+            }
+        }
+
         if (totalRotated >= (maxRevolutions * 360))
         {
             //print("test");
