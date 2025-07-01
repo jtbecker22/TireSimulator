@@ -18,6 +18,9 @@ public class Jack_Animation : MonoBehaviour
 
     public Transform rotationSource; // Assign the GameObject whose Z rotation controls the jack
 
+    [Header("Audio")]
+    public AudioSource audioSource; // Assign in Inspector
+
     void Update()
     {
         // Use this GameObject if no source is assigned
@@ -37,6 +40,21 @@ public class Jack_Animation : MonoBehaviour
         {
             animator.Play(animationStateName, 0, scrub);
             //animator.speed = 0f; // Pause the animator so it doesn't play automatically
+        }
+
+        // Play audio while animation is scrubbing (not at start or end)
+        if (audioSource != null)
+        {
+            if (scrub > 0.02f && scrub < 1f)
+            {
+                if (!audioSource.isPlaying)
+                    audioSource.Play();
+            }
+            else
+            {
+                if (audioSource.isPlaying)
+                    audioSource.Pause();
+            }
         }
     }
 }

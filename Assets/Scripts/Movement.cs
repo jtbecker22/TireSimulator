@@ -16,6 +16,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (target == null) return;
+
         transform.LookAt(target);
 
         Vector3 currentEuler = transform.eulerAngles;
